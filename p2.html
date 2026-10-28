@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math 101 | Fresh Mock Long Exam</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#182230;--muted:#5c6878;--line:#dce2ec;--accent:#3157c8;--accent2:#eaf0ff;--good:#167344;--bad:#b42318}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:#172554;color:white;padding:28px 18px}header .wrap,main{max-width:920px;margin:auto}header .eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;font-weight:700}h1{margin:.25rem 0;font-size:clamp(1.7rem,4vw,2.5rem)}header p{margin:.3rem 0;color:#dbeafe}
+main{padding:20px 14px 60px}.intro,.question,.written,.result{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 14px #16244a08}
+h2{font-size:1.25rem;margin:0 0 8px}h3{font-size:1.05rem;margin:0 0 10px}.muted{color:var(--muted);font-size:.92rem}.qtext{font-weight:650;margin-bottom:12px}.opts{display:grid;gap:8px}.opt{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;border:1px solid var(--line);border-radius:9px;cursor:pointer}.opt:hover{background:#f7f9ff}.opt input{margin-top:5px;accent-color:var(--accent)}.opt.correct{border-color:#58a77a;background:#eefaf2}.opt.incorrect{border-color:#df827b;background:#fff1f0}.feedback{font-size:.92rem;margin-top:10px;font-weight:600}.good{color:var(--good)}.bad{color:var(--bad)}
+button{border:0;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;padding:11px 16px;cursor:pointer;font-size:.96rem}button.secondary{background:#e7ebf3;color:#182230}button:hover{filter:brightness(.96)}.actions{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}.score{font-size:1.8rem;font-weight:800}.written p{margin:.35rem 0}.workspace{height:125px;border:1px dashed #b7c1d3;border-radius:9px;margin-top:12px;padding:10px;color:#8a94a4}.written textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:9px;padding:10px;font:inherit;margin-top:10px;resize:vertical}.key{display:none;background:#f0f4ff;border-radius:9px;padding:12px;margin-top:10px}.key.show{display:block}.tag{display:inline-block;font-size:.78rem;background:var(--accent2);color:#2445a7;padding:3px 8px;border-radius:999px;font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
+@media print{header{background:#fff;color:#000;border-bottom:2px solid #222}header p{color:#333}.intro,.question,.written,.result{box-shadow:none;break-inside:avoid}button,.actions,.muted.noprint{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">Mathematical Analysis I · BSCS</div>
+<h1>Math 101 — Fresh Mock Long Exam</h1>
+<p>Derivatives and Differentiation · Practice version</p>
+</div></header>
+<main>
+<section class="intro">
+<h2>Instructions</h2>
+<p>Part I: Choose the best answer for each question, then press <b>Check Part I</b> to see your score and feedback.</p>
+<p>Part II: Show all necessary solutions. You can type your work in the spaces provided or print the page and solve on paper.</p>
+<p class="muted">This is a new practice set based on the topics and level of your provided Math 101 PDFs. The functions and equations below are newly written rather than copied from the review sheet.</p>
+<div class="tag">Part I · 15 questions</div>
+</section>
+<h2>Part I — Multiple Choice</h2>
+<div id="quiz"></div>
+<div class="actions">
+<button id="check">Check Part I</button>
+<button class="secondary" id="toggleKey">Show answer key</button>
+<button class="secondary" id="reset">Reset answers</button>
+</div>
+<section class="result" id="result" hidden aria-live="polite"></section>
+<section class="intro" id="answerKey" hidden>
+<h2>Answer Key — Part I</h2>
+<p id="keyList"></p>
+<p class="muted">Try to finish the questions before opening the key.</p>
+</section>
+<h2>Part II — Show All Necessary Solutions</h2>
+<section class="written">
+<h3>1. Limit Definition of the Derivative <span class="tag">Show work</span></h3>
+<p>Use the limit definition of the derivative to find \(f'(x)\) if</p>
+<p><b>f(x) = 4x² + x − 2.</b></p>
+<textarea aria-label="Solution to written question 1" placeholder="Write your solution here..."></textarea>
+</section>
+<section class="written">
+<h3>2. Logarithmic Differentiation <span class="tag">Show work</span></h3>
+<p>Find dy/dx using logarithmic differentiation if</p>
+<p><b>y = (x² + 4)³ √(x + 1) / e²ˣ.</b></p>
+<textarea aria-label="Solution to written question 2" placeholder="Take ln of both sides, differentiate, then solve for dy/dx..."></textarea>
+</section>
+<section class="written">
+<h3>3. Implicit Differentiation <span class="tag">Show work</span></h3>
+<p>If y is a function of x, find dy/dx given</p>
+<p><b>x³ + xy² = 4y + 2.</b></p>
+<textarea aria-label="Solution to written question 3" placeholder="Differentiate both sides with respect to x..."></textarea>
+</section>
+<section class="written">
+<h3>4. Tangent and Normal Lines <span class="tag">Show work</span></h3>
+<p>Find an equation of the line perpendicular to the tangent line to the curve</p>
+<p><b>y = x³ − 2x + 4</b> at the point <b>(1, 3)</b>.</p>
+<textarea aria-label="Solution to written question 4" placeholder="Find the tangent slope, then the normal slope and line equation..."></textarea>
+</section>
+<section class="intro">
+<h2>Before you submit</h2>
+<ul>
+<li>Check that you differentiated the inside function when using the chain rule.</li>
+<li>For implicit differentiation, remember that differentiating a term involving y introduces dy/dx.</li>
+<li>For a normal line, its slope is the negative reciprocal of the tangent slope, when defined.</li>
+<li>For logarithmic differentiation, differentiate ln(y) and then solve for y′.</li>
+</ul>
+<div class="actions">
+<button onclick="window.print()">Print / Save as PDF</button>
+<button class="secondary" id="clearWritten">Clear written answers</button>
+</div>
+</section>
+</main>
+<footer>Math 101 practice resource · Each student's answers are stored only in their own open browser session.</footer>
+<script>
+const questions = [
+{q:"Use the limit definition of the derivative to find f′(x) if f(x) = 2x² − 3x.",o:["4x − 3","2x − 3","4x + 3","2x² − 3"],a:0,why:"The derivative is lim[h→0] (2(x+h)² − 3(x+h) − (2x² − 3x))/h = 4x − 3."},
+{q:"If f(x) = 5x⁴ + 3x² − 8, what is f′(x)?",o:["20x³ + 6x","5x³ + 3x","20x⁴ + 6x²","20x³ + 3"],a:0,why:"Apply the power rule term by term; the derivative of a constant is zero."},
+{q:"Given y = 3 sin(2x), what is d²y/dx²?",o:["−6 sin(2x)","−12 sin(2x)","−12 cos(2x)","6 cos(2x)"],a:1,why:"y′ = 6 cos(2x), then y″ = −12 sin(2x)."},
+{q:"Given y = ln(x² + 4), what is y′?",o:["1/(x² + 4)","2x ln(x² + 4)","2x/(x² + 4)","2/(x + 4)"],a:2,why:"Use the chain rule: derivative of ln(u) is u′/u, with u = x² + 4."},
+{q:"Find the derivative of y = (x² + 2)⁴.",o:["4(x² + 2)³","8x(x² + 2)³","8(x² + 2)³","4x(x² + 2)⁴"],a:1,why:"The chain rule gives 4(x² + 2)³ · 2x."},
+{q:"If y = ln(sec x + tan x), what is dy/dx?",o:["−csc x","sec x","tan x","csc x"],a:1,why:"Differentiate the inside: sec x tan x + sec² x = sec x(sec x + tan x); dividing by the inside gives sec x."},
+{q:"If f(x) = (x³ + 1)/(x − 2), what is f′(x)?",o:["(2x³ − 6x² − 1)/(x − 2)²","(3x²)/(1)","(2x³ − 6x² + 1)/(x − 2)²","(x³ + 1)/(x − 2)²"],a:0,why:"Quotient rule: [3x²(x−2) − (x³+1)]/(x−2)² = (2x³−6x²−1)/(x−2)²."},
+{q:"If x² + y² = 5xy and y is a function of x, find dy/dx.",o:["(2x − 5y)/(2y − 5x)","(5y − 2x)/(2y − 5x)","(5x − 2y)/(2x − 5y)","(2x + 5y)/(2y + 5x)"],a:1,why:"Differentiate: 2x + 2y y′ = 5y + 5x y′. Rearranging gives y′ = (5y−2x)/(2y−5x)."},
+{q:"Given y = log₃ x, what is d²y/dx²?",o:["1/(x ln 3)","−1/(x² ln 3)","−1/x²","1/(x² ln 3)"],a:1,why:"First derivative is 1/(x ln 3); differentiating again gives −1/(x² ln 3)."},
+{q:"Find the equation of the normal line to y = x² + 2x at x = 1.",o:["y − 3 = 4(x − 1)","y − 3 = −¼(x − 1)","y − 1 = −¼(x − 3)","y − 3 = ¼(x − 1)"],a:1,why:"At x=1, y=3. The tangent slope is y′=2x+2=4, so the normal slope is −1/4."},
+{q:"Find f′(x) if f(x) = cos(eˣ).",o:["eˣ sin(eˣ)","−eˣ sin(eˣ)","−sin(eˣ)","−eˣ cos(eˣ)"],a:1,why:"Apply the chain rule: −sin(eˣ) · eˣ."},
+{q:"If g(t) = t² cos(3t), what is g′(t)?",o:["2t sin(3t)","2t cos(3t) − 3t² sin(3t)","t² sin(3t)","2t cos(3t) + 3t² sin(3t)"],a:1,why:"Product rule and chain rule: 2t cos(3t) + t²[−3 sin(3t)]."},
+{q:"If y = (x + 1)²/x³, what is y′?",o:["−1/x² − 4/x³ − 3/x⁴","2(x+1)/x³","(x² + 1)/x⁴","−1/x² + 4/x³ − 3/x⁴"],a:0,why:"Rewrite as x⁻¹ + 2x⁻² + x⁻³, then differentiate each term."},
+{q:"Find the third derivative of y = 2x⁶ − x⁴.",o:["60x⁴ − 12x²","240x³ − 24x","120x³ − 24x","720x³ − 24"],a:1,why:"y′=12x⁵−4x³, y″=60x⁴−12x², and y‴=240x³−24x."},
+{q:"If y = sin⁴(3t), which expression gives dy/dt?",o:["4 sin³(3t) cos(3t)","12 sin³(3t) cos(3t)","3 sin⁴(3t) cos(3t)","4 sin³(t) cos(3t)"],a:1,why:"Differentiate the fourth power, then multiply by the derivative of sin(3t), which is 3 cos(3t)."}
+];
+const quiz=document.getElementById('quiz');
+questions.forEach((q,i)=>{
+ const card=document.createElement('section');card.className='question';card.id='q'+i;
+ const title=document.createElement('div');title.className='qtext';title.textContent=(i+1)+'. '+q.q;card.appendChild(title);
+ const opts=document.createElement('div');opts.className='opts';
+ q.o.forEach((o,j)=>{const lab=document.createElement('label');lab.className='opt';lab.innerHTML=`<input type="radio" name="q${i}" value="${j}"><span><b>${String.fromCharCode(65+j)}.</b> ${o}</span>`;opts.appendChild(lab)});
+ card.appendChild(opts);const fb=document.createElement('div');fb.className='feedback';fb.id='fb'+i;card.appendChild(fb);quiz.appendChild(card);
+});
+function checkAnswers(){
+ let score=0,answered=0;
+ questions.forEach((q,i)=>{const selected=document.querySelector(`input[name="q${i}"]:checked`);const card=document.getElementById('q'+i);card.querySelectorAll('.opt').forEach((el,j)=>{el.classList.remove('correct','incorrect');if(j===q.a)el.classList.add('correct')});
+ const fb=document.getElementById('fb'+i);
+ if(selected){answered++;if(Number(selected.value)===q.a){score++;fb.className='feedback good';fb.textContent='Correct. '+q.why}else{fb.className='feedback bad';fb.textContent='Not quite. Correct answer: '+String.fromCharCode(65+q.a)+'. '+q.why;card.querySelectorAll('.opt')[Number(selected.value)].classList.add('incorrect')}}else{fb.className='feedback';fb.textContent='Not answered. Correct answer: '+String.fromCharCode(65+q.a)+'. '+q.why}
+ });
+ const result=document.getElementById('result');result.hidden=false;result.innerHTML=`<h2>Your Part I result</h2><div class="score">${score} / ${questions.length}</div><p>You answered ${answered} of ${questions.length} questions.</p><p>${score===15?'Excellent work!':score>=11?'Good effort. Review any missed rules.':'Review the explanations above, then try again.'}</p>`;
+ document.getElementById('keyList').textContent=questions.map((q,i)=>(i+1)+': '+String.fromCharCode(65+q.a)).join('  ·  ');
+}
+document.getElementById('check').addEventListener('click',checkAnswers);
+document.getElementById('toggleKey').addEventListener('click',()=>{const k=document.getElementById('answerKey');k.hidden=!k.hidden;document.getElementById('toggleKey').textContent=k.hidden?'Show answer key':'Hide answer key';document.getElementById('keyList').textContent=questions.map((q,i)=>(i+1)+': '+String.fromCharCode(65+q.a)).join('  ·  ')});
+document.getElementById('reset').addEventListener('click',()=>{document.querySelectorAll('input[type=radio]').forEach(x=>x.checked=false);document.querySelectorAll('.feedback').forEach(x=>{x.textContent='';x.className='feedback'});document.querySelectorAll('.opt').forEach(x=>x.classList.remove('correct','incorrect'));document.getElementById('result').hidden=true;document.getElementById('answerKey').hidden=true;document.getElementById('toggleKey').textContent='Show answer key';});
+document.getElementById('clearWritten').addEventListener('click',()=>document.querySelectorAll('textarea').forEach(x=>x.value=''));
+</script>
+</body>
+</html>
